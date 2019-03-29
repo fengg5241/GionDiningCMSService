@@ -74,4 +74,9 @@ public class UserServiceImpl implements UserService {
 	public void updatePassword(TUser user) {
 		userMapper.updatePassword(user);
 	}
+
+	@Override
+	public int addPoints(TUser user) {
+		return userMapper.addPoints(user);
+	}
 }

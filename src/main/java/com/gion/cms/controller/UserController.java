@@ -102,6 +102,11 @@ public class UserController {
 		userService.updatePassword(record);
 	}
 	
+	@PostMapping("/addPoints")
+	public void addPoints(@RequestBody TUser record) {
+		userService.addPoints(record);
+	}
+	
 	@RequestMapping("/")
 	public String hello() {
 		return "hello";

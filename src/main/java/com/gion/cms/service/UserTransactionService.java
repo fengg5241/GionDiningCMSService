@@ -13,7 +13,7 @@ public interface UserTransactionService {
 	
 	List<TUserTransaction> getAllByPhone(String phone);
 	
-	BigDecimal getPointByUserId(int id);
+//	BigDecimal getPointByUserId(int id);
 	
 	void insert(TUserTransaction record);
 	

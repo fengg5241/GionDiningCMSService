@@ -30,4 +30,6 @@ public interface UserService {
 	TUser userLogin(TUser user);
 	
 	void updatePassword(TUser user);
+	
+	int addPoints(TUser user);
 }

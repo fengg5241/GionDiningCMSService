@@ -11,15 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gion.cms.entity.TUserTransaction;
-import com.gion.cms.service.UserService;
 import com.gion.cms.service.UserTransactionService;
 
 @RestController
 @RequestMapping("/transaction")
 public class UserTransactionController {
-
-	@Autowired
-	private UserService userService;
 	
 	@Autowired
 	private UserTransactionService tranService;
@@ -39,10 +35,10 @@ public class UserTransactionController {
 		return tranService.getAllByPhone(phone);
 	}
 	
-	@RequestMapping(value = "/getPointById/{id}", produces = "application/json")
-	public BigDecimal getPointById(@PathVariable int id) {
-		return tranService.getPointByUserId(id);
-	}
+//	@RequestMapping(value = "/getPointById/{id}", produces = "application/json")
+//	public BigDecimal getPointById(@PathVariable int id) {
+//		return tranService.getPointByUserId(id);
+//	}
 	
 	@PostMapping("/insert")
 	public void insert(@RequestBody TUserTransaction record) {

@@ -50,19 +50,19 @@ public class UserTransactionServiceImpl implements UserTransactionService {
 		
 	}
 
-	@Override
-	public BigDecimal getPointByUserId(int id) {
-		List<TUserTransaction> list = tranMapper.selectAllByUserId(id);
-		BigDecimal totalPoint = BigDecimal.ZERO;
-		for (TUserTransaction l : list) {
-			if(l.getType() == 1) {
-				totalPoint = totalPoint.add(l.getPayment()).subtract(l.getPoint());
-			}else {
-				totalPoint = totalPoint.add(l.getPayment()).subtract(l.getPoint());
-			}
-		}
-		return totalPoint;
-	}
+//	@Override
+//	public BigDecimal getPointByUserId(int id) {
+//		List<TUserTransaction> list = tranMapper.selectAllByUserId(id);
+//		BigDecimal totalPoint = BigDecimal.ZERO;
+//		for (TUserTransaction l : list) {
+//			if(l.getType() == 1) {
+//				totalPoint = totalPoint.add(l.getPayment()).subtract(l.getPoint());
+//			}else {
+//				totalPoint = totalPoint.add(l.getPayment()).subtract(l.getPoint());
+//			}
+//		}
+//		return totalPoint;
+//	}
 
 	@Override
 	public List<TUserTransaction> getAllByPhone(String phone) {
