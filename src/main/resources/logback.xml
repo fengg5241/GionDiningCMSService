@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <property name="logback.pattern.logger.length" value="50"/>
+    <appender name="CisAuthentication_LOG"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${jboss.server.log.dir}/cisauthentication.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${jboss.server.log.dir}/cisauthentication.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d %-5level [%thread] %logger{${logback.pattern.logger.length}} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="com.sc.fm.com" level="DEBUG"/>
+    <root level="INFO">
+        <appender-ref ref="CisAuthentication_LOG" />
+    </root>
+</configuration>
