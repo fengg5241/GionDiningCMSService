@@ -80,6 +80,11 @@ public class UserController {
 		return userService.getAllWithPoint();
 	}
 	
+	@PostMapping(value = "/getAllTeamMembersByUserId", produces = "application/json")
+	public List<TUser> getAllTeamMembersByUserId(@RequestBody int userId) {
+		return userService.getAllTeamMembersByUserId(userId);
+	}
+	
 	@PostMapping("/insert")
 	public void insert(@RequestBody TUser record) {
 		userService.insert(record);
