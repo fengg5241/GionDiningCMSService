@@ -48,6 +48,11 @@ public class UserServiceImpl implements UserService {
 	public TUser getUserWithPointById(int id) {
 		return userMapper.selectUserWIthPointById(id);
 	}
+	
+	@Override
+	public List<TUser> getAllTeamMembersByUserId(int userId) {
+		return userMapper.getAllTeamMembersByUserId(userId);
+	}
 
 	@Override
 	public void softDelete(TUser user) {
