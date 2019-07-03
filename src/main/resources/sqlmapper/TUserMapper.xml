@@ -176,4 +176,16 @@
     from t_user
     where phone = #{phone,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR} and delete_flag = 0
   </select>
+  <select id="getAllTeamMembersByUserId" parameterType="String" resultMap="BaseResultMap">
+    select id, name, ic, phone, email, birthdate, create_time, update_time,type,point
+    from t_user
+    where (path like '#{userId,jdbcType=VARCHAR}/%' or path like '%/#{userId,jdbcType=VARCHAR}/%') and delete_flag = 0
+  </select>
+  <update id="updatePath" parameterType="com.gion.cms.entity.TUser">
+    update t_user
+    set 
+      path = #{path,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where phone = #{phone,jdbcType=VARCHAR} and delete_flag = 0
+  </update>	
 </mapper>
