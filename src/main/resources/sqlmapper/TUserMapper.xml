@@ -98,6 +98,9 @@
   <update id="addPoints" parameterType="com.gion.cms.entity.TUser">
     update t_user
     set 
+    <if test="name != null">
+    	name = #{name,jdbcType=VARCHAR},
+    </if>
       point = point + #{point,jdbcType=DECIMAL},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}

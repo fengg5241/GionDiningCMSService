@@ -4,14 +4,18 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
+import com.gion.cms.controller.UserController;
 import com.gion.cms.entity.TUser;
 import com.gion.cms.mapper.TUserMapper;
 
 @Service
 public class UserServiceImpl implements UserService {
 
+	private static final Logger log = Logger.getLogger(UserServiceImpl.class);
+	
 	@Resource
 	private TUserMapper userMapper;
 	
@@ -67,7 +71,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public TUser userLogin(TUser user) {
-		return userMapper.userLogin(user);
+		
+		TUser loginUser = userMapper.userLogin(user);
+		return loginUser;
 	}
 
 	@Override

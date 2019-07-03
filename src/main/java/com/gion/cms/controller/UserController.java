@@ -3,6 +3,7 @@ package com.gion.cms.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,8 @@ import com.gion.cms.service.UserService;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+	private static final Logger log = Logger.getLogger(UserController.class);
+ 
 
 	@Autowired
 	private UserService userService;
@@ -94,6 +97,7 @@ public class UserController {
 	
 	@PostMapping("/login")
 	public TUser login(@RequestBody TUser user) {
+		log.info("login method");
 		return userService.userLogin(user);
 	}
 	
