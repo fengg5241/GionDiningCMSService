@@ -21,6 +21,8 @@ public interface UserService {
 	
 	TUser getUserWithPointByPhone(String phone);
 	
+	List<TUser> getAllTeamMembersByUserId(int userId);
+	
 	void softDelete(TUser user);
 	
 	void insert(TUser user);
