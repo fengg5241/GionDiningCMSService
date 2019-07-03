@@ -31,5 +31,7 @@ public interface UserService {
 	
 	void updatePassword(TUser user);
 	
+	void updatePath(TUser user);
+	
 	int addPoints(TUser user);
 }
