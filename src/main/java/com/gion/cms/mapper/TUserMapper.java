@@ -56,6 +56,8 @@ public interface TUserMapper {
     
     int updatePassword(TUser user);
     
+    int updatePath(TUser user);
+    
     int addPoints(TUser user);
     
     TUser selectByPhone(String phone);
