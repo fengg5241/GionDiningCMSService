@@ -182,6 +182,12 @@
     from t_user
     where (path like '#{userId,jdbcType=VARCHAR}/%' or path like '%/#{userId,jdbcType=VARCHAR}/%') and delete_flag = 0
   </select>
+  <select id="getAllParentsByUserId" parameterType="String" resultMap="BaseResultMap">
+    select id, name, ic, phone, email, birthdate, create_time, update_time,type,point
+    from t_user
+    where path like '%/#{userId,jdbcType=VARCHAR}' and delete_flag = 0
+  </select>
+
   <update id="updatePath" parameterType="com.gion.cms.entity.TUser">
     update t_user
     set 
