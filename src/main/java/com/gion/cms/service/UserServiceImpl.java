@@ -53,6 +53,11 @@ public class UserServiceImpl implements UserService {
 	public List<TUser> getAllTeamMembersByUserId(int userId) {
 		return userMapper.getAllTeamMembersByUserId(userId);
 	}
+	
+	@Override
+	public List<TUser> getAllParentsByUserId(int userId) {
+		return userMapper.getAllParentsByUserId(userId);
+	}
 
 	@Override
 	public void softDelete(TUser user) {
