@@ -23,6 +23,8 @@ public interface UserService {
 	
 	List<TUser> getAllTeamMembersByUserId(int userId);
 	
+	List<TUser> getAllParentsByUserId(int userId);
+	
 	void softDelete(TUser user);
 	
 	void insert(TUser user);
